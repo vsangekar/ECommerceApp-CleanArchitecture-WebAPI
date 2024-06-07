@@ -1,4 +1,5 @@
 ﻿using EcommerceApp.Application.Command;
+using EcommerceApp.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,14 @@ namespace ECommerceApp.Api.Controllers
         {
             var userId = await _mediator.Send(command);
             return Ok(userId);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var query = new GetUserByIdQuery { UserId = id };
+            var user = await _mediator.Send(query);
+            return Ok(user);
         }
     }
 }

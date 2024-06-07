@@ -1,14 +1,14 @@
-﻿using EcommerceApp.Application.DTO;
-using MediatR;
+﻿using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcommerceApp.Application.Queries
+namespace EcommerceApp.Application.Command
 {
-    public class GetUserByIdQuery : IRequest<UserDto>
+    public class DeleteUserCommand : IRequest<bool>
     {
         public Guid UserId { get; set; }
     }
+}
