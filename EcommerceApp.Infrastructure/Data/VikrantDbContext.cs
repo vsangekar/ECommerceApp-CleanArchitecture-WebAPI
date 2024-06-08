@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EcommerceApp.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,11 @@ namespace EcommerceApp.Infrastructure.Data
         {
             
         }
+
+        #region DbSet
+
+        public DbSet<User> Users { get; set; }
+
+        #endregion
     }
 }
