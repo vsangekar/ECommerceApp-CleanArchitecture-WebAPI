@@ -1,4 +1,4 @@
-﻿using EcommerceApp.Application.Command;
+﻿using EcommerceApp.Application.Command.User;
 using EcommerceApp.Application.IRepository;
 using MediatR;
 using System;

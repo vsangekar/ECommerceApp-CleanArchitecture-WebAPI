@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcommerceApp.Application.Command
+namespace EcommerceApp.Application.Command.User
 {
     public class UpdateUserCommand : IRequest<bool>
     {

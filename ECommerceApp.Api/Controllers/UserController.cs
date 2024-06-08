@@ -1,4 +1,4 @@
-﻿using EcommerceApp.Application.Command;
+﻿using EcommerceApp.Application.Command.User;
 using EcommerceApp.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

@@ -1,15 +1,14 @@
 ﻿using EcommerceApp.Application.DTO;
-using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcommerceApp.Application.Queries
+namespace EcommerceApp.Application.Services.IService
 {
-    public class GetUserByIdQuery : IRequest<UserDto>
+    public interface ITokenService
     {
-        public Guid UserId { get; set; }
+        string GenerateToken(UserDto user);
     }
 }

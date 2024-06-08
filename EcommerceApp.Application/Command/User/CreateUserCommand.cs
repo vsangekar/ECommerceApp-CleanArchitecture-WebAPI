@@ -1,7 +1,7 @@
 ﻿using EcommerceApp.Domain.Entities;
 using MediatR;
 
-namespace EcommerceApp.Application.Command
+namespace EcommerceApp.Application.Command.User
 {
     public class CreateUserCommand : IRequest<Guid>
     {
