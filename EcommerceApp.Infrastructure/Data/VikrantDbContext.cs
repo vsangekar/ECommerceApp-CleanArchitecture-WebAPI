@@ -19,6 +19,8 @@ namespace EcommerceApp.Infrastructure.Data
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Roles> Roles{ get; set; }
+
         #endregion
     }
 }

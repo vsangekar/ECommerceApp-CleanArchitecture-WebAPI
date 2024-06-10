@@ -1,13 +1,13 @@
-﻿using System;
+﻿using EcommerceApp.Domain.Base;
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcommerceApp.Domain.Entities
 {
-    public class User
+    [Table("User", Schema = "EcommerceApp")]
+    public partial class User : BaseEntity
     {
-        [Key]
-        public Guid Id { get; set; }
-
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
@@ -49,10 +49,10 @@ namespace EcommerceApp.Domain.Entities
         public string Address { get; set; }
 
         [Required]
-        public long CountryID { get; set; }
+        public Guid CountryID { get; set; }
 
         [Required]
-        public long CityID { get; set; }
+        public Guid CityID { get; set; }
 
         [MaxLength(50)]
         public string CreatedBy { get; set; }
