@@ -19,14 +19,5 @@ namespace EcommerceApp.Domain.Entities
         [MaxLength(500)]
         public string Description { get; set; }
 
-        public Guid? CreatedBy { get; set; }
-
-        public Guid? UpdatedBy { get; set; }
-
-        public DateTime? CreatedAt { get; set; }
-
-        public DateTime? LastUpdatedAt { get; set; }
-
-        public bool MarkAsDeleted { get; set; }
     }
 }
