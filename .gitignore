@@ -365,3 +365,6 @@ FodyWeavers.xsd
 # Ignore appsettings.json files
 appsettings.json
 appsettings.Development.json
+
+#Exclude Migration folder
+Migrations/

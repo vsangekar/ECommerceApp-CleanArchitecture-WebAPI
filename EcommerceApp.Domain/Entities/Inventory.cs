@@ -16,7 +16,7 @@ namespace EcommerceApp.Domain.Entities
         public Guid ProductID { get; set; }
 
         [ForeignKey("ProductID")]
-        public Product Product { get; set; }
+        public Products Product { get; set; }
 
         [Required]
         public int Quantity { get; set; }

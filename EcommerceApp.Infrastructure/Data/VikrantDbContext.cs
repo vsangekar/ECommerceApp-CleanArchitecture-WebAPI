@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Metrics;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,13 +15,13 @@ namespace EcommerceApp.Infrastructure.Data
     {
         public VikrantDbContext(DbContextOptions<VikrantDbContext> options) : base(options)
         {
-            
+
         }
 
         #region DbSet
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Roles> Roles{ get; set; }
+        public DbSet<Roles> Roles { get; set; }
         public DbSet<Addresses> Addresses { get; set; }
         public DbSet<Cities> Cities { get; set; }
         public DbSet<Categories> Categories { get; set; }
@@ -38,53 +40,78 @@ namespace EcommerceApp.Infrastructure.Data
 
         #endregion
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            // Seed Roles
-            modelBuilder.Entity<Roles>().HasData(
-                new Roles
-                {
-                    ID = Guid.NewGuid(),
-                    Name = "Admin",
-                    Description = "Administrator role with full permissions",
-                },
-                new Roles
-                {
-                    ID = Guid.NewGuid(),
-                    Name = "Customer",
-                    Description = "Customer role with permissions to make purchases",
-                },
-                new Roles
-                {
-                    ID = Guid.NewGuid(),
-                    Name = "Seller",
-                    Description = "Seller who wants to sell the product",
-                }
-            );
-
-            var adminUserId = Guid.NewGuid();
-            var adminRoleId = Guid.NewGuid(); 
-            modelBuilder.Entity<UserRoles>().HasData(
-                new UserRoles
-                {
-                    UserID = adminUserId,
-                    RoleID = adminRoleId
-                }
-            );
-            modelBuilder.Entity<User>().HasData(
-                new User
-                {
-                    ID = adminUserId,
-                    Name = "Admin User",
-                    Gender = Gender.Male,
-                    Email = "admin@test.com",
-                    Username = "admin",
-                    Password = "Admin@12345", 
-                    CreatedDate = DateTime.UtcNow,  
-                }
-            );
-        }
     }
+
+    //protected override void OnModelCreating(ModelBuilder modelBuilder)
+    //{
+    //    base.OnModelCreating(modelBuilder);
+
+    //    bool enableSeeding = false; // Set this to true when you are ready to seed
+
+    //    if (enableSeeding)
+    //    {
+    //        modelBuilder.Entity<UserRoles>().HasData(
+    //            new UserRoles
+    //            {
+    //                ID = Guid.NewGuid(),
+    //                RoleID= Guid.NewGuid(),
+    //            }
+    //        );
+    //    }
+    //    // Seed Roles
+    //    modelBuilder.Entity<Roles>().HasData(
+    //        new Roles
+    //        {
+    //            ID = Guid.NewGuid(),
+    //            Name = "Admin",
+    //            Description = "Administrator role with full permissions",
+    //        },
+    //        new Roles
+    //        {
+    //            ID = Guid.NewGuid(),
+    //            Name = "Customer",
+    //            Description = "Customer role with permissions to make purchases",
+    //        },
+    //        new Roles
+    //        {
+    //            ID = Guid.NewGuid(),
+    //            Name = "Seller",
+    //            Description = "Seller who wants to sell the product",
+    //        }
+    //    );
+
+
+    //    var adminUserId = Guid.NewGuid();
+    //    var adminRoleId = Guid.NewGuid(); 
+    //    modelBuilder.Entity<UserRoles>().HasData(
+    //        new UserRoles
+    //        {
+    //            UserID = adminUserId,
+    //            RoleID = adminRoleId
+    //        }
+    //    );
+    //    modelBuilder.Entity<User>().HasData(
+    //        new User
+    //        {
+    //            ID = adminUserId,
+    //            Name = "Admin User",
+    //            Gender = Gender.Male,
+    //            Email = "admin@test.com",
+    //            Username = "admin",
+    //            Password = "Admin@12345",
+    //            CreatedDate = DateTime.UtcNow,
+    //            Address = "TestAddress",
+    //            CountryCode="IN",
+    //            CountryID= Guid.NewGuid(),
+    //            CreatedBy="Vikrant",
+    //            Description ="admin",
+    //            Image="testImage",
+    //            Phone="8446320238",
+    //            PhoneWithCountryCode="+91",
+
+
+    //        }
+    //    );
+    //}
 }
+
