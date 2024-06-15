@@ -368,3 +368,7 @@ appsettings.Development.json
 
 #Exclude Migration folder
 Migrations/
+
+#Exclude wwwroot folder
+
+wwwroot/
