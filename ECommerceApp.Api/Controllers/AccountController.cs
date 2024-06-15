@@ -29,5 +29,29 @@ namespace ECommerceApp.Api.Controllers
             }
             return Unauthorized(response);
         }
+
+        //[HttpPost("register")]
+        //public async Task<IActionResult> Register([FromBody] AdminRegisterVM model)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
+
+        //    if (!await _roleManager.RoleExistsAsync("Admin"))
+        //    {
+        //        await _roleManager.CreateAsync(new IdentityRole("Admin"));
+        //    }
+
+        //    var user = new IdentityUser { UserName = model.email, Email = model.email };
+
+        //    var result = await _userManager.CreateAsync(user, model.Password);
+
+        //    if (result.Succeeded)
+        //    {
+        //        await _userManager.AddToRoleAsync(user, "Admin");
+        //        return Ok(new { Message = "User registered as SuperAdmin successfully." });
+        //    }
+
+        //    return BadRequest(new { Errors = result.Errors });
+        //}
     }
 }

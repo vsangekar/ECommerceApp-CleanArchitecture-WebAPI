@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EcommerceApp.Application\EcommerceApp.Application.csproj" />
+    <ProjectReference Include="..\EcommerceApp.Domain\EcommerceApp.Domain.csproj" />
+    <ProjectReference Include="..\EcommerceApp.Infrastructure\EcommerceApp.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
