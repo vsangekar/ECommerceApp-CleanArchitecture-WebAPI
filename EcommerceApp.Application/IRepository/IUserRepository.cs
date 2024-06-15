@@ -14,6 +14,5 @@ namespace EcommerceApp.Application.IRepository
         Task<bool> UpdateAsync(UpdateUserCommand command);
         Task<bool> DeleteAsync(Guid userId);
         Task<UserDto> GetByIdAsync(Guid userId);
-        Task<UserDto> ValidateUserCredentialsAsync(string username, string password);
     }
 }

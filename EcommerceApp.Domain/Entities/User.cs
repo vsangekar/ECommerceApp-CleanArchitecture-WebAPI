@@ -32,11 +32,18 @@ namespace EcommerceApp.Domain.Entities
         [Required]
         public string Password { get; set; }
 
+        [Required]
+        [MaxLength(64)] 
+        public string Salt { get; set; }
+
         public DateTime? DOB { get; set; }
 
         [Phone]
         [MaxLength(20)]
         public string Phone { get; set; }
+
+        [Required]
+        public bool IsPhoneVerified { get; set; }
 
         [Phone]
         [MaxLength(20)]

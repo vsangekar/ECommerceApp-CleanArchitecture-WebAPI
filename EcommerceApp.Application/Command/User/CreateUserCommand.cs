@@ -14,6 +14,7 @@ namespace EcommerceApp.Application.Command.User
         public string PasswordHash { get; set; }
         public DateTime? DOB { get; set; }
         public string Phone { get; set; }
+        public string IsPhoneVerified { get; set; }
         public string PhoneWithCountryCode { get; set; }
         public string CountryCode { get; set; }
         public string Address { get; set; }

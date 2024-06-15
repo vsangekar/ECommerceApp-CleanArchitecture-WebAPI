@@ -1,6 +1,7 @@
 ﻿using EcommerceApp.Application.Command.User;
 using EcommerceApp.Application.DTO;
 using EcommerceApp.Application.IRepository;
+using EcommerceApp.Domain.Entities;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -81,11 +82,6 @@ namespace EcommerceApp.Application.Repository
                 .FirstOrDefaultAsync();
 
             return user;
-        }
-
-        public Task<UserDto> ValidateUserCredentialsAsync(string username, string password)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -13,18 +13,18 @@ namespace EcommerceApp.Application.Handler.Account
 {
     public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResponse>
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IAccountRepository _accountRepository;
         private readonly ITokenService _tokenService;
 
-        public LoginCommandHandler(IUserRepository userRepository, ITokenService tokenService)
+        public LoginCommandHandler(IAccountRepository accountRepository, ITokenService tokenService)
         {
-            _userRepository = userRepository;
+            _accountRepository = accountRepository;
             _tokenService = tokenService;
         }
 
         public async Task<LoginResponse> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.ValidateUserCredentialsAsync(request.Username, request.Password);
+            var user = await _accountRepository.ValidateUserCredentialsAsync(request.Username, request.Password);
 
             if (user == null)
             {
